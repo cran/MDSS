@@ -1,0 +1,15 @@
+export(mds, cca, unseiji_ST61_C, unseiji_ST61_M1)
+importFrom("graphics", "lines", "abline",
+	"plot", "points", "rect", "polygon")
+importFrom("grDevices", "topo.colors", "rgb")
+importFrom("stats", "integrate")
+
+# mds S3methods
+S3method(mds, default)
+S3method(print, mds)
+S3method(plot, mds)
+
+# cca S3methods
+S3method(cca, default)
+S3method(print, cca)
+S3method(plot, cca)
