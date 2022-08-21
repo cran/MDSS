@@ -21,7 +21,7 @@
   If the argument \code{delta} is omitted, the corresponding age ranges for each serial section are plotted with its positions in the standardized y-axis. If the argument \code{delta} is specified, the originally-assigned ages and the modeled age ranges for each section are plotted with its stable isotope ratios. 
 }
 \references{
-  Tsutaya T. in prep. Blurred time resolution of tooth dentin serial sections.
+  Tsutaya T 2020. Blurred time resolution of tooth dentin serial sections. American Journal of Physical Anthropology 173:748--759. DOI: 10.1002/ajpa.24113.
 }
 \author{
   Takumi Tsutaya developed this model.

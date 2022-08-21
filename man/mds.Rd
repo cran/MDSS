@@ -43,7 +43,7 @@
   \item{call}{The matched call.}
 }
 \references{
-  Tsutaya T. in prep. Blurred time resolution of tooth dentin serial sections.
+  Tsutaya T 2020. Blurred time resolution of tooth dentin serial sections. American Journal of Physical Anthropology 173:748--759. DOI: 10.1002/ajpa.24113.
 }
 \author{
   Takumi Tsutaya developed this model.

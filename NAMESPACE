@@ -1,7 +1,9 @@
-export(mds, cca, unseiji_ST61_C, unseiji_ST61_M1)
+export(mds, cca, PlotSections,
+	unseiji_ST61_C, unseiji_ST61_M1)
 importFrom("graphics", "lines", "abline",
 	"plot", "points", "rect", "polygon")
-importFrom("grDevices", "topo.colors", "rgb")
+importFrom("grDevices", "topo.colors", "rgb",
+	"adjustcolor")
 importFrom("stats", "integrate")
 
 # mds S3methods

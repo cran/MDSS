@@ -10,6 +10,7 @@
 # 2018-10-15: Tsutaya T: Adopted irregular sampling.
 # 2019-12-25: Tsutaya T: Devided ward and dss.
 # 2020-01-05: Tsutaya T: Revised explanations.
+# 2022-08-21: Tsutaya T: Added PlotSections.
 # ==============================
 # PURPOSE
 # INPUTS
@@ -1305,4 +1306,78 @@ PlotAgeBean <- function(t.g.mid, t.n, t.n.ref,
   }
 }
 
+PlotSections <- function(age, delta,
+  obj, error = 0.1, col = "black", pch = 21, ...){
+# Plot multiple bean and section delta with age for actual dataset.
+#
+# args:
+#  age: List of user-assigned ages for each sections.
+#  delta: List of vector observed delta values for each sections.
+#  obj: List of class "cca" objects. 
+#  error: Vector of analytical error. Used for the height of "beans".
+#  col: Vector of "col" values for plot.
+#  pch: Vector of "pch" values for plot.
+#  \dots: Additional arguments that are passed to image().
+  # Variables.
+  n.sec <- length(age)
+
+  if(length(error) == 1){
+   error <- rep(error, n.sec)
+  }
+  if(length(col) == 1){
+   col.p <- rep(col, n.sec)
+  }else{
+    col.p <- col
+  }
+  col.b <- adjustcolor(col.p, alpha.f = 0.2)
+  if(length(pch) == 1){
+   pch <- rep(pch, n.sec)
+  }
+
+  if(!exists("xlim")){
+    xlim <- c(min(unlist(age), na.rm = TRUE),
+      max(unlist(age), na.rm = TRUE))
+  }
+
+  if(!exists("ylim")){
+    ylim <- c(min(unlist(delta), na.rm = TRUE),
+      max(unlist(delta), na.rm = TRUE))
+    ylim <- ylim + max(error) * c(-1, 1)
+  }
+
+  # Defining the plot area.
+  Age <- NA
+  delta_value <- NA
+  plot(Age, delta_value, xlim = xlim, ylim = ylim, ...)
+
+  # Plotting the beans and lines.
+  for(i in 1:n.sec){
+    t.g.mid <- obj[[i]]$t.all$t.g.mid
+    t.n.ref <- obj[[i]]$t.all$t.n.ref
+    parea <- obj[[i]]$parea
+
+    # True age distribution.
+    for(j in seq(parea[1, ])){
+      prop2 <- parea[ , j]
+      prop <- prop2 / max(prop2, na.rm = TRUE)
+      is.prop <- prop != 0
+      dprop <- prop * error[i]
+      polygon(
+        x = c(t.g.mid[is.prop], rev(t.g.mid[is.prop])),
+        y = c(dprop[is.prop], rev(dprop[is.prop] * -1)) +
+          delta[[i]][j],
+        lty = "solid", lwd = 0.5, col = col.b[i])
+      lines(
+        x = rep(t.n.ref[j], 2),
+        y = delta[[i]][j] + c(1, -1) * error[i] / 4,
+        lwd = 3)
+      }
+
+    # Section delta.
+    points(age[[i]], delta[[i]], type = "o",
+      lwd = 1, col = col.p[i], pch = pch[i])
+  }
+}
+
 # END
+

@@ -34,7 +34,7 @@
   \item{cca}{Matrix of assigned ages to each section. The row consists of the assigned midpoint ages to sections with equal-temporal division (\code{equally}), the modeled midpoint age calculated from the weighted contribution from GLs (\code{weighted}), the duration of modeled age range (\code{duration}), and lower and upper ages of the modeled age range (\code{lower} and \code{upper}). The column corresponds to each section, and the smallest column number represents the crown-most section.}
 }
 \references{
-  Tsutaya T. in prep. Blurred time resolution of tooth dentin serial sections.
+  Tsutaya T 2020. Blurred time resolution of tooth dentin serial sections. American Journal of Physical Anthropology 173:748--759. DOI: 10.1002/ajpa.24113.
 }
 \author{
   Takumi Tsutaya developed this model.

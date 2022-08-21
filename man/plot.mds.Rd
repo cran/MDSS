@@ -17,7 +17,7 @@
   The modeled tooth dentin is plotted on a geometric plane. Dentin horn and root tip equal the geometric origin and the coordinate (0, 1), respectively. Growth lines are shown with oblique colored lines inside the longitudinal half of tooth dentin outer shape. Horizontal sections are shown with horizontal solid black lines.
 }
 \references{
-  Tsutaya T. in prep. Blurred time resolution of tooth dentin serial sections.
+  Tsutaya T 2020. Blurred time resolution of tooth dentin serial sections. American Journal of Physical Anthropology 173:748--759. DOI: 10.1002/ajpa.24113.
 }
 \author{
   Takumi Tsutaya developed this model.
